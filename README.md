@@ -4,4 +4,4 @@
 
 # Technologies used
 
-# Lessons Learned# BlackjackProject
+# Lessons Learned
