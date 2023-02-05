@@ -14,10 +14,7 @@ public abstract class Hand {
 	}
 
 	public void clearCards() {
-		for (Card card : cards) {
-			cards.remove(card);
-//			use iterator here
-		}
+			cards.clear();
 	}
 
 	public abstract int getHandValue();

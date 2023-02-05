@@ -8,8 +8,8 @@ public class BlackjackDealer extends BlackjackPlayer {
 		shuffleDeck();
 	}
 
-	public void cardsRemaining() {
-		System.out.println(dealersDeck.checkDeckSize());
+	public int cardsRemaining() {
+		return dealersDeck.checkDeckSize();
 	}
 
 	public Card dealToPlayer() {
@@ -28,19 +28,21 @@ public class BlackjackDealer extends BlackjackPlayer {
 	}
 
 	public void showOneCard() {
-		System.out.println("The dealers upcard is a " + bjHand.getCards().get(1));
+		System.out.println("The dealers hand shows a " + bjHand.getCards().get(1));
 	}
-	
+
 	public void oneCardValue() {
-		System.out.println("The value of the dealers upcard is " + bjHand.getCards().get(1).getValue());
-				
+		System.out.println("The value of the dealers current hand is " + bjHand.getCards().get(1).getValue());
+
 	}
+
 	public void showDealersHand() {
 		System.out.println("Dealers hand is " + bjHand);
 	}
+
 	@Override
 	public void checkHandValue() {
 		System.out.println("The dealer has a total of " + bjHand.getHandValue());
 	}
-	
+
 }
