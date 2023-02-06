@@ -1,6 +1,5 @@
 package com.skilldistillery.blackjack.app;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.skilldistillery.blackjack.entities.BlackjackDealer;
@@ -8,19 +7,18 @@ import com.skilldistillery.blackjack.entities.BlackjackHand;
 import com.skilldistillery.blackjack.entities.BlackjackPlayer;
 
 public class BlackjackApp {
-	static Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
 	private BlackjackHand playersHand = new BlackjackHand();
 	private BlackjackHand dealersHand = new BlackjackHand();
 	private BlackjackPlayer player = new BlackjackPlayer(playersHand);
 	private BlackjackDealer dealer = new BlackjackDealer(dealersHand);
 	private final static int RULE_OF_SEVENTEEN = 17;
 	private final static int CUT_CARD = 13;
-	public final static int HIGHEST_BLACKJACK_SCORE = 21;
+	private final static int HIGHEST_BLACKJACK_SCORE = 21;
 
 	public static void main(String[] args) {
 		BlackjackApp bjapp = new BlackjackApp();
 		bjapp.playGame();
-		sc.close();
 	}
 
 	public void playGame() {
@@ -69,6 +67,7 @@ public class BlackjackApp {
 				}
 			}
 		}
+		sc.close();
 	}
 
 	public void dealHands() {
@@ -88,7 +87,12 @@ public class BlackjackApp {
 
 	public boolean blackjackCheck(boolean isGameContinuing) {
 
-		if (playersHand.isBlackjack() == true) {
+		if (playersHand.isBlackjack() == true && dealersHand.isBlackjack() == true ) {
+			System.out.println("This hand is a push");
+			dealer.showDealersHand();
+			isGameContinuing = false;
+		}
+		else if (playersHand.isBlackjack() == true) {
 			System.out.println("***Congrats! Player has Blackjack!***");
 			dealer.showDealersHand();
 			isGameContinuing = false;

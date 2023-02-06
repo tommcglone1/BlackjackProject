@@ -13,13 +13,10 @@ public class BlackjackDealer extends BlackjackPlayer {
 	}
 
 	public Card dealToPlayer() {
-
 		return dealersDeck.dealCard();
-
 	}
 
 	public Card dealToSelf() {
-
 		return dealersDeck.dealCard();
 	}
 

@@ -1,7 +1,5 @@
 package com.skilldistillery.blackjack.entities;
 
-
-
 public class BlackjackPlayer {
 	protected BlackjackHand bjHand = new BlackjackHand();
 
@@ -12,8 +10,6 @@ public class BlackjackPlayer {
 	public void checkHandValue() {
 		System.out.println("The player has a total of " + bjHand.getHandValue());
 	}
-
-
 	public BlackjackHand getPlayersHand() {
 		return bjHand;
 	}

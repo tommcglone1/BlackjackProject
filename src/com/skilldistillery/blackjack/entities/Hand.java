@@ -19,7 +19,7 @@ public abstract class Hand {
 
 	public abstract int getHandValue();
 
-	@Override
+	
 	public String toString() {
 		return "" + cards;
 	}
